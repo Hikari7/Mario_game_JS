@@ -36,6 +36,18 @@ const init = () => {
       moveHorizonal(avatar, -50);
     }
 
+    //なんか関数作ったらいけた、なぜ？？？
+    const flip = () => {
+      if (e.key === "ArrowRight" || e.key === "Right") {
+        this.avatar.style.transform = "scale(1, 1)";
+      }
+      if (e.key === "ArrowLeft" || e.key === "Left") {
+        this.avatar.style.transform = "scale(-1, 1)";
+      }
+    };
+
+    flip();
+
     //もしマリオがコインにタッチしたらコインが動く
     if (isTouching(avatar, coin)) {
       moveCoin();
@@ -55,13 +67,16 @@ const moveHorizonal = (element, amount) => {
   element.style.left = `${currLeft + amount}px`;
 };
 
-
 const extractPos = (position) => {
-    // const intFrameHeight = window.innerHeight;
-    // console.log(intFrameHeight);
-
-//   if (!position === top.innerHeight) return 100;
+  // const myWinX = screen.width;
+  // const myWinY = screen.height;
+  // //   const frame = myWin.screenX;
+  // console.log(myWinX);
+  // console.log(myWinY);
+  // console.log(position);
+  // if(myWinX === position);
   if (!position) return 100;
+
   return parseInt(position.slice(0, -2));
 };
 
